@@ -1,306 +1,146 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bira Tattoo - Ordem Litúrgica</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-  <title>Bira Tattoo</title>
+    body {
+      background: #050505;
+      color: white;
+      font-family: 'Times New Roman', Georgia, serif;
+      overflow-x: hidden;
+      height: 100vh;
+    }
+
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .bg-video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .overlay {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.75);
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .brasao {
+      width: min(280px, 70vw);
+      margin-bottom: 40px;
+      opacity: 0.85;
+      filter: drop-shadow(0 0 20px rgba(0,0,0,0.8));
+    }
+
+    .frase {
+      font-size: clamp(18px, 4vw, 28px);
+      letter-spacing: 4px;
+      margin-bottom: 50px;
+      font-style: italic;
+      color: #c9a54b;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+
+    .btn-ordem {
+      background: transparent;
+      border: 2px solid #c9a54b;
+      color: #c9a54b;
+      padding: 16px 42px;
+      font-size: clamp(16px, 3vw, 20px);
+      letter-spacing: 4px;
+      cursor: pointer;
+      transition: all 0.5s;
+      font-family: 'Times New Roman', Georgia, serif;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.6);
+    }
+
+    .btn-ordem:hover {
+      background: #c9a54b;
+      color: #050505;
+      box-shadow: 0 0 30px rgba(201,165,75,0.3);
+    }
+
+    @media (max-width: 600px) {
+      .frase {
+        letter-spacing: 2px;
+      }
+      .btn-ordem {
+        padding: 12px 24px;
+        letter-spacing: 2px;
+      }
+    }
+  </style>
 </head>
-<style>
-  *{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-body{
-  background:#050505;
-  color:white;
-  font-family:Arial, sans-serif;
-  overflow-x:hidden;
-}
-
-img,
-video{
-  max-width:100%;
-}
-
-/* HERO */
-
-.hero{
-  position:relative;
-  width:100%;
-  height:100vh;
-  overflow:hidden;
-}
-
-.bg-video{
-  position:absolute;
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-
-.overlay{
-  position:absolute;
-  width:100%;
-  height:100%;
-  background:rgba(0,0,0,.70);
-}
-
-/* MENU */
-
-header{
-  position:absolute;
-  top:0;
-  width:100%;
-  padding:24px clamp(16px, 4vw, 60px);
-
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-
-  z-index:10;
-}
-
-.logo{
-  font-size:clamp(18px, 2.8vw, 28px);
-  letter-spacing:clamp(2px, 0.8vw, 6px);
-  font-weight:bold;
-}
-
-nav{
-  display:flex;
-  gap:clamp(12px, 2vw, 30px);
-  flex-wrap:wrap;
-  justify-content:flex-end;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
-  opacity:.8;
-  transition:.3s;
-  font-size:clamp(13px, 1.2vw, 16px);
-}
-
-nav a:hover{
-  opacity:1;
-}
-
-/* HERO CONTENT */
-
-.hero-content{
-  position:relative;
-  z-index:5;
-
-  width:100%;
-  height:100%;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-
-  text-align:center;
-
-  padding:20px;
-}
-
-.hero-content h1{
-  font-size:clamp(36px, 10vw, 90px);
-  letter-spacing:clamp(2px, 1vw, 10px);
-  line-height:1.05;
-}
-
-.hero-content p{
-  margin-top:20px;
-  font-size:clamp(15px, 2.4vw, 20px);
-  max-width:700px;
-  opacity:.8;
-}
-
-.buttons{
-  margin-top:40px;
-  display:flex;
-  gap:20px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-
-.buttons button{
-  padding:14px 26px;
-  border:none;
-  background:#8a6a2f;
-  color:white;
-  cursor:pointer;
-  font-size:14px;
-  letter-spacing:2px;
-  min-width:180px;
-}
-
-/* MUSIC BUTTON */
-
-#musicButton{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-
-  width:60px;
-  height:60px;
-
-  border:none;
-  border-radius:50%;
-
-  background:#8a6a2f;
-  color:white;
-
-  font-size:20px;
-
-  z-index:999;
-}
-
-@media (max-width: 900px){
-  .hero{
-    min-height:100svh;
-    height:auto;
-  }
-
-  header{
-    flex-direction:column;
-    align-items:flex-start;
-    gap:14px;
-  }
-
-  nav{
-    width:100%;
-    justify-content:flex-start;
-  }
-
-  .hero-content{
-    padding:120px 20px 40px;
-  }
-}
-
-@media (max-width: 560px){
-  header{
-    padding:18px 16px;
-  }
-
-  nav{
-    gap:10px 16px;
-  }
-
-  .hero-content{
-    padding:140px 16px 32px;
-  }
-
-  .buttons{
-    width:100%;
-    gap:12px;
-  }
-
-  .buttons button{
-    width:100%;
-    min-width:0;
-    padding:14px 16px;
-    letter-spacing:1px;
-  }
-
-  #musicButton{
-    width:52px;
-    height:52px;
-    bottom:14px;
-    right:14px;
-  }
-}
-</style>
-</head>
-
 <body>
-
-  <!-- HERO -->
-
   <section class="hero">
-
     <video autoplay muted loop playsinline class="bg-video">
       <source src="video1.mp4" type="video/mp4">
-</video>
+    </video>
     <div class="overlay"></div>
-
-    <!-- MENU -->
-
-    <header>
-
-      <div class="logo">
-        BIRA TATTOO
-      </div>
-
-      <nav>
-        <a href="#">Portfolio</a>
-        <a href="#">Sobre</a>
-        <a href="#">Liturgic Trap</a>
-        <a href="#">Contato</a>
-      </nav>
-
-    </header>
-
-    <!-- CONTEÚDO -->
-
-    <div class="hero-content">
-
-      <h1>BIRA TATTOO</h1>
-
-      <p>
-        Tatuagem raiz. Sem modinha.
-        Desenvolvida com maestria.
-      </p>
-
-      <div class="buttons">
-        <button>VER TRABALHOS</button>
-        <button>AGENDAR</button>
-      </div>
-
+    
+    <div class="content">
+      <img src="brasao.png" alt="Brasão da Ordem" class="brasao">
+      <div class="frase">"Antes da tinta, existe o chamado"</div>
+      <button class="btn-ordem" id="ingressarBtn">INGRESSAR NA IRMANDADE</button>
     </div>
-
   </section>
-
-  <!-- PLAYER -->
 
   <audio id="bgMusic" loop>
     <source src="intro.mp3" type="audio/mp3">
   </audio>
 
-  <button id="musicButton">
-    🔇
-  </button>
-
-  
-
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
+  <script>
     const music = document.getElementById('bgMusic');
-    const button = document.getElementById('musicButton');
-    let playing = false;
+    const btn = document.getElementById('ingressarBtn');
+    let musicaTocando = false;
 
-    if (button && music) {
-      music.volume = 0.15;
-
-      button.addEventListener('click', function() {
-        if (!playing) {
-          music.play();
-          button.innerHTML = '🔊';
-          playing = true;
-        } else {
-          music.pause();
-          button.innerHTML = '🔇';
-          playing = false;
-        }
-      });
+    if (music) {
+      music.volume = 0.2;
     }
-  });
-</script>
-</body>
 
+    btn.addEventListener('click', function() {
+      // Tenta tocar a música (se o navegador permitir)
+      if (music && !musicaTocando) {
+        music.play().then(() => {
+          musicaTocando = true;
+        }).catch(() => {
+          // navegador bloqueou, fazer nada
+        });
+      }
+      
+      // Redireciona para a página da equipe
+      window.location.href = 'equipe.html';
+    });
+  </script>
+</body>
 </html>
