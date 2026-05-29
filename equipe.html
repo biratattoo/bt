@@ -18,15 +18,19 @@
       line-height: 1.6;
     }
 
-    .bg-video {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: -2;
-    }
+    .bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('fundo.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -2;
+}
+    
 
     .overlay {
       position: fixed;
@@ -139,9 +143,11 @@
   </style>
 </head>
 <body>
-  <video autoplay muted loop playsinline class="bg-video">
-    <img src="fundo.jpeg" type="image/jpg">
-  </video>
+<!--  <video autoplay muted loop playsinline class="bg-video">
+    <img src="video1.mp4" type="image/jpg">
+  </video> -->
+  <div class="bg-image"></div>
+
   <div class="overlay"></div>
 
   <div class="container">
