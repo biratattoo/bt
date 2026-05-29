@@ -297,8 +297,28 @@ button.addEventListener('click', () => {
     🔇
   </button>
 
-  <script src="script.js"></script>
+  <script>
+  // Aguarda o HTML carregar completamente
+  document.addEventListener('DOMContentLoaded', function() {
+    const music = document.getElementById('bgMusic');
+    const button = document.getElementById('musicButton');
+    let playing = false;
 
+    if (button && music) {
+      button.addEventListener('click', () => {
+        if (!playing) {
+          music.play();
+          button.innerHTML = '🔊';
+          playing = true;
+        } else {
+          music.pause();
+          button.innerHTML = '🔇';
+          playing = false;
+        }
+      });
+    }
+  });
+</script>
 </body>
 
 </html>
