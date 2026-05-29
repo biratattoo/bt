@@ -284,53 +284,52 @@ nav a:hover{
     let playing = false;
 
     if (button && music) {
-      music.volume = 0.2;
-      
-      // Mostra uma mensagem pro usuário
-      const heroContent = document.querySelector('.hero-content');
-      const msg = document.createElement('div');
-      msg.innerHTML = '🎵 Clique em qualquer lugar para ativar a música 🎵';
-      msg.style.position = 'fixed';
-      msg.style.bottom = '100px';
-      msg.style.left = '0';
-      msg.style.right = '0';
-      msg.style.textAlign = 'center';
-      msg.style.background = '#8a6a2f';
-      msg.style.padding = '10px';
-      msg.style.zIndex = '1000';
-      msg.style.fontSize = '14px';
-      document.body.appendChild(msg);
-      
-      // Some a mensagem depois de 5 segundos
+      // Volume bem baixo
+      music.volume = 0.15;
+
+      // Cria um aviso para o usuário no celular
+      const aviso = document.createElement('div');
+      aviso.innerHTML = '🎵 TOQUE NO BOTÃO DO AUTO-FALANTE 🎵';
+      aviso.style.position = 'fixed';
+      aviso.style.bottom = '100px';
+      aviso.style.left = '10px';
+      aviso.style.right = '10px';
+      aviso.style.textAlign = 'center';
+      aviso.style.background = '#8a6a2f';
+      aviso.style.color = 'white';
+      aviso.style.padding = '12px';
+      aviso.style.borderRadius = '30px';
+      aviso.style.zIndex = '1000';
+      aviso.style.fontSize = '14px';
+      aviso.style.fontWeight = 'bold';
+      aviso.style.boxShadow = '0 2px 10px rgba(0,0,0,0.5)';
+      document.body.appendChild(aviso);
+
+      // Aviso some depois de 5 segundos
       setTimeout(() => {
-        msg.style.display = 'none';
+        aviso.style.opacity = '0';
+        aviso.style.transition = '0.5s';
+        setTimeout(() => {
+          if (aviso.parentNode) aviso.remove();
+        }, 500);
       }, 5000);
-      
-      function ativarMusica() {
+
+      // Botão principal
+      button.addEventListener('click', function() {
         if (!playing) {
           music.play().then(() => {
-            playing = true;
             button.innerHTML = '🔊';
-            msg.style.display = 'none';
-          }).catch(() => {});
-        }
-        document.removeEventListener('click', ativarMusica);
-        document.removeEventListener('touchstart', ativarMusica);
-      }
-      
-      document.addEventListener('click', ativarMusica);
-      document.addEventListener('touchstart', ativarMusica);
-      
-      button.addEventListener('click', function(e) {
-        e.stopPropagation();
-        if (playing) {
+            playing = true;
+            // Se o aviso ainda estiver lá, remove
+            if (aviso.parentNode) aviso.remove();
+          }).catch(function(erro) {
+            console.log("Erro:", erro);
+            alert("Toque no botão novamente para ativar a música");
+          });
+        } else {
           music.pause();
           button.innerHTML = '🔇';
           playing = false;
-        } else {
-          music.play();
-          button.innerHTML = '🔊';
-          playing = true;
         }
       });
     }
