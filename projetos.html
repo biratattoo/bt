@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projetos | Bira Tattoo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #050505;
+      color: #e0e0e0;
+      font-family: 'Times New Roman', Georgia, serif;
+      min-height: 100vh;
+    }
+
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('fundo.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 50px;
+      border-bottom: 1px solid #c9a54b;
+      padding-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: clamp(32px, 6vw, 52px);
+      color: #c9a54b;
+      letter-spacing: 6px;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 18px;
+      font-style: italic;
+      color: #aaa;
+    }
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      color: #c9a54b;
+      text-decoration: none;
+      margin: 0 12px;
+      font-size: 14px;
+      letter-spacing: 2px;
+    }
+
+    .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 60px auto;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .grid-projetos {
+      display: flex;
+      flex-direction: column;
+      gap: 60px;
+    }
+
+    .card-projeto {
+      display: flex;
+      flex-wrap: wrap;
+      background: rgba(20, 20, 20, 0.7);
+      border: 1px solid #c9a54b40;
+      border-radius: 20px;
+      overflow: hidden;
+      transition: 0.3s;
+    }
+
+    .card-projeto:hover {
+      border-color: #c9a54b;
+      transform: translateY(-5px);
+    }
+
+    .card-imagem {
+      flex: 1;
+      min-width: 250px;
+      background: #00000050;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+    }
+
+    .card-imagem img {
+      max-width: 200px;
+      width: 80%;
+      filter: drop-shadow(0 0 10px black);
+    }
+
+    .card-conteudo {
+      flex: 2;
+      padding: 30px;
+    }
+
+    .card-conteudo h2 {
+      color: #c9a54b;
+      font-size: 28px;
+      letter-spacing: 2px;
+      margin-bottom: 15px;
+    }
+
+    .card-conteudo p {
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .btn-projeto {
+      background: transparent;
+      border: 1px solid #c9a54b;
+      color: #c9a54b;
+      padding: 8px 20px;
+      text-decoration: none;
+      letter-spacing: 2px;
+      transition: 0.3s;
+      display: inline-block;
+    }
+
+    .btn-projeto:hover {
+      background: #c9a54b;
+      color: black;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 70px;
+      font-size: 13px;
+      color: #555;
+    }
+
+    @media (max-width: 700px) {
+      .card-conteudo {
+        padding: 20px;
+      }
+      .card-conteudo h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-image"></div>
+<div class="overlay"></div>
+
+<div class="container">
+  <header>
+    <h1>✦ PROJETOS ✦</h1>
+    <p>Histórias que viram arte eterna</p>
+    <nav>
+      <a href="index.html">PORTAL</a>
+      <a href="equipe.html">EQUIPE</a>
+      <a href="portfolio.html">PORTFÓLIO</a>
+      <a href="liturgic-trap.html">LITURGIC TRAP</a>
+      <a href="projetos.html">PROJETOS</a>
+      <a href="contato.html">CONTATO</a>
+    </nav>
+  </header>
+
+  <div class="intro">
+    ⚔️ Cada projeto é uma jornada. Da dor à arte, das cinzas ao renascimento. ⚔️
+  </div>
+
+  <div class="grid-projetos">
+
+    <!-- PROJETO 1: RENASCENDO DAS CINZAS -->
+    <div class="card-projeto">
+      <div class="card-imagem">
+        <img src="logo-projeto.png" alt="Renascendo das Cinzas">
+      </div>
+      <div class="card-conteudo">
+        <h2>🔥 Renascendo das Cinzas</h2>
+        <p>O projeto que começou com a história real da Ligian. Uma imersão profunda onde a dor vira tatuagem, e a tatuagem vira identidade. Cada elemento carrega simbologia, cada traço carrega verdade.</p>
+        <a href="projeto-renascendo.html" class="btn-projeto">CONHEÇA ESTE PROJETO →</a>
+      </div>
+    </div>
+
+    <!-- PROJETO 2: AQUI ENTRA O PRÓXIMO (FUTURO) -->
+    <!-- 
+    <div class="card-projeto">
+      <div class="card-imagem">
+        <img src="logo-projeto2.png" alt="Próximo Projeto">
+      </div>
+      <div class="card-conteudo">
+        <h2>⚔️ Nome do Próximo Projeto</h2>
+        <p>Descrição resumida do próximo projeto. O que ele significa, qual a mensagem, o estilo e a abordagem.</p>
+        <a href="projeto-proximo.html" class="btn-projeto">CONHEÇA ESTE PROJETO →</a>
+      </div>
+    </div>
+    -->
+
+  </div>
+
+  <div class="footer">
+    Cada projeto é uma batalha vencida. | Bira Tattoo
+  </div>
+</div>
+
+</body>
+</html>
