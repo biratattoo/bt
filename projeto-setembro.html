@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Setembro de Recomeços | Bira Tattoo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #050505;
+      color: #e0e0e0;
+      font-family: 'Times New Roman', Georgia, serif;
+      min-height: 100vh;
+    }
+
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('fundo.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.88);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #c9a54b;
+      padding-bottom: 25px;
+    }
+
+    header h1 {
+      font-size: clamp(28px, 6vw, 44px);
+      color: #c9a54b;
+      letter-spacing: 4px;
+    }
+
+    header p {
+      font-size: 16px;
+      font-style: italic;
+      margin-top: 10px;
+      color: #bbb;
+    }
+
+    nav {
+      margin-top: 20px;
+    }
+
+    nav a {
+      color: #c9a54b;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .selo {
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    .selo img {
+      max-width: 180px;
+      opacity: 0.9;
+    }
+
+    .chamada {
+      font-size: 24px;
+      text-align: center;
+      color: #c9a54b;
+      margin: 30px 0 20px;
+      font-style: italic;
+    }
+
+    .texto {
+      background: rgba(0, 0, 0, 0.6);
+      border-left: 4px solid #c9a54b;
+      padding: 30px;
+      line-height: 1.7;
+      font-size: 18px;
+      margin: 30px 0;
+    }
+
+    .aviso {
+      background: #1a1a1a;
+      border: 1px solid #8a2f2f;
+      padding: 25px;
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cvv {
+      font-size: 32px;
+      font-weight: bold;
+      color: #c9a54b;
+      letter-spacing: 6px;
+      margin: 15px 0;
+    }
+
+    .btn-voltar {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #c9a54b;
+      color: #c9a54b;
+      padding: 12px 28px;
+      text-decoration: none;
+      letter-spacing: 3px;
+      margin-top: 20px;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 60px;
+      font-size: 12px;
+      color: #666;
+    }
+
+    @media (max-width: 600px) {
+      .texto {
+        font-size: 16px;
+        padding: 20px;
+      }
+      .cvv {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-image"></div>
+<div class="overlay"></div>
+
+<div class="container">
+  <header>
+    <h1> SETEMBRO DE RECOMEÇOS </h1>
+    <p>Renascendo das Cinzas — Ação Social</p>
+    <nav>
+      <a href="index.html">PORTAL</a>
+      <a href="projetos.html">PROJETOS</a>
+      <a href="contato.html">CONTATO</a>
+    </nav>
+  </header>
+
+  <div class="chamada">
+    “Transformar marcas em recomeços”
+  </div>
+
+  <div class="texto">
+    <p>O <strong>“Renascendo das Cinzas — Setembro de Recomeços”</strong> é uma ação social idealizada por <strong>Bira Tattoo</strong>, realizada durante o Setembro Amarelo, reunindo tatuadores voluntários de diferentes estados do Brasil com um propósito em comum:</p>
+    <p style="margin-top: 20px;"><strong>Através da arte da tatuagem</strong>, buscamos auxiliar pessoas que carregam cicatrizes físicas e emocionais a ressignificarem partes de sua trajetória, promovendo acolhimento, autoestima e reconstrução pessoal.</p>
+  </div>
+
+  <div class="aviso">
+    <p style="color: #c9a54b; font-weight: bold;">⚠️ ATENÇÃO ⚠️</p>
+    <p style="margin-top: 12px;">Este projeto <strong>NÃO substitui</strong> acompanhamento psicológico ou psiquiátrico.</p>
+    <p>A tatuagem <strong>não é tratamento</strong>. O cuidado emocional e a saúde mental devem sempre ser acompanhados por profissionais especializados.</p>
+    <p style="margin-top: 15px;">Se precisar conversar, o <strong>Centro de Valorização da Vida — CVV</strong> oferece apoio gratuito e sigiloso.</p>
+    <div class="cvv">188</div>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="projetos.html" class="btn-voltar">← VOLTAR PARA PROJETOS</a>
+  </div>
+
+  <div class="footer">
+    Setembro Amarelo | Bira Tattoo · Tatuagem com propósito
+  </div>
+</div>
+
+</body>
+</html>
