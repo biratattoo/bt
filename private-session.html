@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Session | Bira Tattoo</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #050505;
+      color: #e0e0e0;
+      font-family: 'Times New Roman', Georgia, serif;
+      min-height: 100vh;
+    }
+
+    .bg-image {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('fundo.jpg');
+      background-size: cover;
+      background-position: center;
+      z-index: -2;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
+      z-index: -1;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+      border-bottom: 1px solid #c9a54b;
+      padding-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: clamp(32px, 6vw, 52px);
+      color: #c9a54b;
+      letter-spacing: 8px;
+      margin-bottom: 15px;
+    }
+
+    header p {
+      font-size: 18px;
+      font-style: italic;
+      color: #aaa;
+    }
+
+    nav {
+      margin-top: 25px;
+    }
+
+    nav a {
+      color: #c9a54b;
+      text-decoration: none;
+      margin: 0 10px;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    /* IMAGEM DESTAQUE */
+    .imagem-destaque {
+      text-align: center;
+      margin: 40px 0 50px 0;
+    }
+
+    .imagem-destaque img {
+      max-width: 100%;
+      border-radius: 15px;
+      border: 1px solid #c9a54b60;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    /* CONTEÚDO PRINCIPAL */
+    .hero-session {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .hero-session h2 {
+      font-size: clamp(28px, 5vw, 42px);
+      color: #c9a54b;
+      margin-bottom: 20px;
+      letter-spacing: 4px;
+    }
+
+    .hero-session p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .diferenciais {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 25px;
+      margin: 60px 0;
+    }
+
+    .card-diferencial {
+      background: rgba(20, 20, 20, 0.7);
+      border: 1px solid #c9a54b40;
+      border-radius: 12px;
+      padding: 25px;
+      text-align: center;
+      transition: 0.3s;
+    }
+
+    .card-diferencial:hover {
+      border-color: #c9a54b;
+      transform: translateY(-5px);
+    }
+
+    .card-diferencial .icone {
+      font-size: 48px;
+      margin-bottom: 15px;
+      display: inline-block;
+    }
+
+    .card-diferencial h3 {
+      color: #c9a54b;
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+
+    .card-diferencial p {
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    .destaque {
+      background: rgba(201, 165, 75, 0.1);
+      border-left: 4px solid #c9a54b;
+      padding: 35px;
+      margin: 50px 0;
+      text-align: center;
+    }
+
+    .destaque h3 {
+      color: #c9a54b;
+      font-size: 24px;
+      margin-bottom: 15px;
+    }
+
+    .destaque p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .btn-agendar {
+      display: inline-block;
+      background: transparent;
+      border: 2px solid #c9a54b;
+      color: #c9a54b;
+      padding: 16px 42px;
+      text-decoration: none;
+      letter-spacing: 4px;
+      font-size: 18px;
+      transition: 0.3s;
+      margin-top: 20px;
+    }
+
+    .btn-agendar:hover {
+      background: #c9a54b;
+      color: #050505;
+    }
+
+    .footer {
+      text-align: center;
+      margin-top: 70px;
+      padding-top: 30px;
+      border-top: 1px solid #c9a54b30;
+      font-size: 13px;
+      color: #777;
+    }
+
+    @media (max-width: 700px) {
+      .hero-session h2 {
+        font-size: 28px;
+      }
+      .hero-session p {
+        font-size: 16px;
+      }
+      .destaque p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="bg-image"></div>
+<div class="overlay"></div>
+
+<div class="container">
+  <header>
+    <h1> PRIVATE SESSION </h1>
+    <p>Exclusividade · Privacidade · Atendimento personalizado</p>
+    <nav>
+      <a href="index.html">PORTAL</a>
+      <a href="equipe.html">EQUIPE</a>
+      <a href="portfolio.html">PORTFÓLIO</a>
+      <a href="liturgic-trap.html">LITURGIC TRAP</a>
+      <a href="projetos.html">PROJETOS</a>
+      <a href="acervo.html">ACERVO</a>
+      <a href="certificado.html">CERTIFICADO</a>
+      <a href="private-session.html">PRIVATE</a>
+      <a href="contato.html">CONTATO</a>
+    </nav>
+  </header>
+
+  <!-- IMAGEM DEPOIS DO MENU -->
+  <div class="imagem-destaque">
+    <img src="privatesession.jpg" alt="Private Session - Bira Tattoo">
+  </div>
+
+  <div class="hero-session">
+    <h2>VOCÊ NÃO VAI ATÉ O ESTÚDIO.<br>O ESTÚDIO VAI ATÉ VOCÊ.</h2>
+    <p>Uma experiência criada para quem valoriza conforto, privacidade e atendimento personalizado. Toda estrutura profissional é montada no local escolhido por você.</p>
+  </div>
+
+  <div class="diferenciais">
+    <div class="card-diferencial">
+      <div class="icone">🚫</div>
+      <h3>Sem deslocamento</h3>
+      <p>Você relaxa enquanto levamos todo o equipamento até você.</p>
+    </div>
+    <div class="card-diferencial">
+      <div class="icone">🪑</div>
+      <h3>Sem sala de espera</h3>
+      <p>Atendimento exclusivo e privado, sem interrupções ou estranhos.</p>
+    </div>
+    <div class="card-diferencial">
+      <div class="icone">🔇</div>
+      <h3>Sem interrupções</h3>
+      <p>Foco total na sua arte. Do início ao fim, apenas você e o traço.</p>
+    </div>
+    <div class="card-diferencial">
+      <div class="icone">👑</div>
+      <h3>Atendimento exclusivo</h3>
+      <p>Toda atenção e dedicação para a sua experiência única.</p>
+    </div>
+    <div class="card-diferencial">
+      <div class="icone">🏠</div>
+      <h3>Conforto real</h3>
+      <p>No ambiente que você escolher: sua casa, escritório ou um espaço alugado.</p>
+    </div>
+    <div class="card-diferencial">
+      <div class="icone">🎯</div>
+      <h3>Ambiente escolhido por você</h3>
+      <p>Você dita o local. Nós montamos o estúdio.</p>
+    </div>
+  </div>
+
+  <div class="destaque">
+    <h3>⚔️ SUA CASA VIRA UM ESTÚDIO PARTICULAR ⚔️</h3>
+    <p>Toda estrutura profissional de tatuagem é montada no local escolhido por você.<br>
+    Esterilização, maca, iluminação, materiais premium — tudo com o mesmo padrão de qualidade do estúdio.<br>
+    Você só se preocupa em viver a experiência.</p>
+  </div>
+
+  <div style="text-align: center;">
+    <a href="contato.html" class="btn-agendar">⚔️ AGENDAR PRIVATE SESSION ⚔️</a>
+  </div>
+
+  <div class="footer">
+    Bira Tattoo & Ligian · A tinta e a alma · A correria e o afeto
+  </div>
+</div>
+
+</body>
+</html>
